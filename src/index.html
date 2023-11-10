@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.1/dist/tailwind.min.css" rel="stylesheet">
     <title>Page HTML - Utilisation de TailwindCSS</title>
 </head>
 <body class="font-sans antialiased text-gray-900 leading-normal tracking-wider bg-cover">
@@ -21,12 +20,12 @@
     </div>
 </header>
 
-<section class="container mx-auto text-center py-20">
-    <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Bienvenue</h1>
-    <p class="mt-6 text-lg leading-8 text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<section class="container rounded-xl mx-auto mb-20 text-center py-40 bg-gradient-to-r from-amber-200 to-yellow-400">
+    <h1 class="text-4xl font-bold tracking-tight text-black sm:text-6xl">Bienvenue</h1>
+    <p class="mt-6 text-lg leading-8 text-black">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
     <div class="mt-10 flex items-center justify-center gap-x-6">
-        <a href="#" class="bg-yellow-400 hover:bg-black text-black hover:text-yellow-400 font-bold py-2 px-4 rounded-full">Super !</a>
-        <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Génial !</a>
+        <a href="#" class="bg-black hover:bg-white text-yellow-400 hover:text-black font-bold py-2 px-4 rounded-full">Super !</a>
+        <a href="#" class="text-sm font-semibold leading-6 text-black hover:underline">Génial !</a>
     </div>
 </section>
 
@@ -57,6 +56,40 @@
         </div>
     </div>
 </section>
+
+<div class="container mx-auto grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-2 py-16 sm:py-24 lg:py-32">
+    <div class="max-w-md mx-auto pt-10">
+        <h2 class="text-4xl font-bold tracking-tight text-black sm:text-6xl pb-6">Contactez-nous</h2>
+        <p class="text-gray-600 mb-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+    <div class="w-full mx-auto">
+        <form action="#" class="px-8 pt-6 pb-8 mb-4">
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
+                    Nom
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" placeholder="Votre nom">
+            </div>
+            <div class="mb-6">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+                    Email
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" placeholder="Votre email">
+            </div>
+            <div class="mb-6">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="message">
+                    Message
+                </label>
+                <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="message" placeholder="Votre message" rows="4"></textarea>
+            </div>
+            <div class="flex items-center justify-between">
+                <button class="bg-yellow-400 hover:bg-black text-black hover:text-yellow-400 font-bold py-2 px-4 rounded-full" type="submit">
+                    Envoyer
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
 
 <!-- Footer -->
 <footer class="w-full border-t bg-white pb-12">

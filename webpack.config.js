@@ -1,26 +1,36 @@
 const path = require('path');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
-
+const webpack = require("webpack");
+const chokidar = require('chokidar');
 const src = path.join(__dirname, './src');
 
 module.exports = {
-    entry: './src/index.js',
+    entry: {
+        app: './src/index.js',
+    },
     devServer: {
         static: {
             directory: path.resolve(__dirname, 'dist'),
         },
         port: 8080,
-        hot: true,
         compress: true,
+        client: false,
         historyApiFallback: true,
+        watchFiles: {
+            paths: ['src/**/*'],
+            options: {
+                usePolling: false,
+            },
+        },
     },
     output: {
-        filename: 'bundle.js',
+        filename: 'bundle-[id].js',
         path: path.resolve(__dirname, 'dist'),
         clean: true
     },
     plugins: [
+        new webpack.HotModuleReplacementPlugin(),
         new HtmlWebPackPlugin({
             template: path.join(src, 'index.html')
         }),
