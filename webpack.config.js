@@ -1,5 +1,8 @@
 const path = require('path');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
+
+const src = path.join(__dirname, './src');
 
 module.exports = {
     entry: './src/index.js',
@@ -19,8 +22,12 @@ module.exports = {
     },
     plugins: [
         new HtmlWebPackPlugin({
-            template: "./src/index.html", // C'est l'emplacement de votre fichier index.html
-            filename: "./index.html"
+            template: path.join(src, 'index.html')
+        }),
+        new CopyPlugin({
+            patterns: [
+                { from: "./src/img", to: "./img" },
+            ],
         }),
         require('tailwindcss'),
         require('autoprefixer'),
@@ -32,9 +39,12 @@ module.exports = {
                 use: ['style-loader', 'css-loader', 'postcss-loader']
             },
             {
-                test: /\.(png|svg|jpg|jpeg|gif)$/,
+                test: /\.(png|jpg|jpeg|gif)$/i,
                 type: 'asset/resource',
-            }
+                generator: {
+                    filename: '[name][ext]'
+                }
+            },
         ]
     }
 };
