@@ -20,6 +20,14 @@
     </div>
 </header>
 
+<div class="component-toggle p-10" x-data="{ open: false }">
+    <button @click="open = ! open;">test</button>
+    <div x-show="open" class="component-toggle-content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, autem, consequuntur, delectus doloremque dolorum eaque eos expedita facere fugit harum impedit ipsam itaque libero maiores maxime minima molestiae natus nihil nulla numquam obcaecati officia optio pariatur quasi quasi quasi quasi quasi quasi quasi quasi quasi quasi quasi quasi quasi quasi quasi quasi quasi quasi quasi quasi quasi quasi quasi quasi quasi quasi quasi quasi quasi quasi quasi quasi quasi quasi quasi quasi quasi quasi quasi quasi quasi quasi quasi quasi quasi quasi quasi quasi quasi quasi quasi quasi quasi quasi quasi quasi quasi quasi quasi quasi quasi
+    </div>
+</div>
+
+
 <section class="container rounded-xl mx-auto mb-20 text-center py-40 bg-gradient-to-r from-amber-200 to-yellow-400">
     <h1 class="text-4xl font-bold tracking-tight text-black sm:text-6xl">Bienvenue</h1>
     <p class="mt-6 text-lg leading-8 text-black">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>

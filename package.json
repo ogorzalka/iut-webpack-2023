@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "@tailwindcss/aspect-ratio": "^0.4.2",
+    "alpinejs": "^3.13.2",
     "lodash": "^4.17.21",
     "webpack-hot-middleware": "^2.25.4"
   }
